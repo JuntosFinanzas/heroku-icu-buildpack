@@ -41,7 +41,8 @@ fi
 
 # Tell Charlock Holmes where to find ICU.
 export BUNDLE_BUILD__CHARLOCK_HOLMES="--with-icu-dir=$compile"
-export BUNDLE_BUILD__ICU="--with-icu-dir=$compile"
+export BUNDLE_BUILD__ICU="--with-icu-dir=$compile --with-opt-dir=/app/icu"
+export C_INCLUDE_PATH=$compile
 
 # Make sure we export the relevant environment variables for later buildpacks
 export | grep -E -e '(BUNDLE_BUILD__CHARLOCK_HOLMES)='  > "$buildpack/export"
