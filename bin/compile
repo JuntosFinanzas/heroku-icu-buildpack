@@ -43,7 +43,7 @@ fi
 export BUNDLE_BUILD__CHARLOCK_HOLMES="--with-icu-dir=$compile"
 export BUNDLE_BUILD__ICU="--with-icu-dir=$compile --with-opt-dir=/app/icu --no-document"
 export C_INCLUDE_PATH=$compile
-export LD_LIBRARY_PATH=$compile
+export LD_LIBRARY_PATH=/app/icu/lib/:/app/vendor/bundle/ruby/2.3.0/gems/icu-0.10.2/ports/x86_64-pc-linux-gnu/libicu/59.1/lib/
 
 # Make sure we export the relevant environment variables for later buildpacks
 export | grep -E -e '(BUNDLE_BUILD__CHARLOCK_HOLMES)='  > "$buildpack/export"
