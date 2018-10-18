@@ -56,6 +56,9 @@ echo `ls /app/vendor/bundle/ruby/2.3.0/gems/icu-0.10.2/`
 echo "path /app/vendor/bundle/ruby/2.3.0/extensions/"
 echo `ls /app/vendor/bundle/ruby/2.3.0/extensions/`
 
+echo "find"
+echo `find / -name icu.so`
+
 export LD_LIBRARY_PATH=/app/icu/lib/:/app/vendor/bundle/ruby/2.3.0/gems/icu-0.10.2/ports/x86_64-pc-linux-gnu/libicu/59.1/lib/
 
 # Make sure we export the relevant environment variables for later buildpacks
