@@ -44,22 +44,18 @@ export BUNDLE_BUILD__CHARLOCK_HOLMES="--with-icu-dir=$compile"
 export BUNDLE_BUILD__ICU="--with-icu-dir=$compile --with-opt-dir=/app/icu --no-document"
 export C_INCLUDE_PATH=$compile
 
-echo "path /app/icu/"
-echo `ls /app/icu/`
 
-echo "path /app/icu/lib/"
-echo `ls /app/icu/lib/`
+echo "path /app/tmp/cache/cedar-14/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0-static/icu-0.10.2/icu/icu.so "
+echo `ls /app/tmp/cache/cedar-14/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0-static/icu-0.10.2/icu/`
 
-echo "path /app/vendor/bundle/ruby/2.3.0/gems/icu-0.10.2/"
-echo `ls /app/vendor/bundle/ruby/2.3.0/gems/icu-0.10.2/`
+echo "path /app/tmp/cache/cedar-14/vendor/bundle/ruby/2.3.0/gems/icu-0.10.2/ext/icu/icu.so "
+echo `ls /app/tmp/cache/cedar-14/vendor/bundle/ruby/2.3.0/gems/icu-0.10.2/ext/icu/`
 
-echo "path /app/vendor/bundle/ruby/2.3.0/extensions/"
-echo `ls /app/vendor/bundle/ruby/2.3.0/extensions/`
+echo "path /app/tmp/cache/cedar-14/vendor/bundle/ruby/2.3.0/gems/icu-0.10.2/lib/icu/icu.so"
+echo `ls /app/tmp/cache/cedar-14/vendor/bundle/ruby/2.3.0/gems/icu-0.10.2/lib/icu/`
 
-echo "find"
-echo `find / -name icu.so`
 
-export LD_LIBRARY_PATH=/app/icu/lib/:/app/vendor/bundle/ruby/2.3.0/gems/icu-0.10.2/ports/x86_64-pc-linux-gnu/libicu/59.1/lib/
+export LD_LIBRARY_PATH=/app/icu/lib/:/app/tmp/cache/cedar-14/vendor/bundle/ruby/2.3.0/gems/icu-0.10.2/lib/icu/
 
 # Make sure we export the relevant environment variables for later buildpacks
 export | grep -E -e '(BUNDLE_BUILD__CHARLOCK_HOLMES)='  > "$buildpack/export"
