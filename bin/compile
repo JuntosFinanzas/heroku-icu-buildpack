@@ -55,8 +55,9 @@ echo "path /app/tmp/cache/cedar-14/vendor/bundle/ruby/2.3.0/gems/icu-0.10.2/lib/
 echo `ls /app/tmp/cache/cedar-14/vendor/bundle/ruby/2.3.0/gems/icu-0.10.2/lib/icu/`
 
 
-export LD_LIBRARY_PATH=/app/icu/lib/:/app/tmp/cache/cedar-14/vendor/bundle/ruby/2.3.0/gems/icu-0.10.2/lib/icu/
+export LD_LIBRARY_PATH=/app/tmp/cache/cedar-14/vendor/bundle/ruby/2.3.0/gems/icu-0.10.2/lib/icu/
 
 # Make sure we export the relevant environment variables for later buildpacks
 export | grep -E -e '(BUNDLE_BUILD__CHARLOCK_HOLMES)='  > "$buildpack/export"
 export | grep -E -e '(BUNDLE_BUILD__ICU)='  > "$buildpack/export"
+export | grep -E -e '(LD_LIBRARY_PATH)=' > "$buildpack/export"
